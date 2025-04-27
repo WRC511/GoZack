@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="main-content">
+        <h1 class="text-center">World’s Finest</h1>
+
+        <p class="text-center">
+            Showing {{ results|length }} result{% if results|length != 1 %}s{% endif %} for: <strong>{{ search_query }}</strong>
+        </p>
+
+        <div class="row mt-3" id="search-results">
+            {% if results %}
+                {% for item in results %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card item-card" data-id="{{ item.id }}">
+                            <img src="{{ item.image }}" class="card-img-top img-fluid" alt="{{ item.title }}">
+                            <div class="card-body">
+                                <div class="card-content">
+                                    <h5 class="card-title">{{ item.title }}</h5>
+                                    <p><strong>Price:</strong> {{ item.price }}</p>
+                                    <p><strong>Rating:</strong> {{ item.rating }} ⭐</p>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="/view/{{ item.id }}" class="btn btn-primary view-btn" data-id="{{ item.id }}">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center">No results found.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

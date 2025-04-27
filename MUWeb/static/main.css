@@ -1,0 +1,180 @@
+:root {
+  --navbar-height: 80px; /* Adjust as needed */
+}
+
+body {
+    background-color: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #4A4A4A; /* Dark gray for visibility */
+    text-shadow: 0px 0px 10px rgba(176, 196, 222, 0.8);
+}
+
+.custom-navbar {
+    background-color: #EAF2F8;
+    position: fixed; /* Try without !important first */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150;
+    padding: 15px 20px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3), 0px 0px 30px rgba(200, 200, 200, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.brand-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #4682B4;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 0px 0px 15px rgba(200, 200, 200, 0.7);
+    letter-spacing: 1.5px;
+}
+
+.brand-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2C3E50;
+    text-shadow: none;
+}
+
+.main-content {
+    margin-top: 15px;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    padding-top: var(--navbar-height); /* Use the CSS variable */
+}
+
+.search-results-header {
+    color: black;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: black;
+}
+
+.item-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.item-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.like-btn {
+    margin-top: 10px;
+    z-index: 10;
+    position: relative;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+.btn-primary,
+.custom-navbar .btn-primary {
+    background-color: #4682B4;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(70, 130, 180, 0.8);
+    color: white;
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.btn-primary:hover,
+.custom-navbar .btn-primary:hover {
+    background-color: #5A9BD4;
+}
+.navbar-nav .nav-item:first-child {
+    padding-left: 60px;  /* Adjust this value as needed */
+}
+
+
+#search {
+    background-color: #EEE;
+    color: black;
+    border: 1px solid #666;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#search::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+#products-container, #search-results {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card .card-img-top,
+.card .img-fluid {
+    border-radius: 7px;
+    height: 400px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.btn-primary:hover,
+.custom-navbar .btn-primary:hover {
+    background-color: #5A9BD4;
+    box-shadow: 0px 0px 15px rgba(70, 130, 180, 1);
+}
+.navbar-nav .btn-primary {
+    margin-right: 10px;
+}
+
+.item-title {
+    text-align: left;
+    padding-left: 15px;
+    color: #36454F; /* Ensure the text stands out */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6), 
+                 0 0 30px rgba(173, 216, 230, 0.5); /* Glassy glow effect */
+    font-weight: bold; /* Make it stand out */
+}

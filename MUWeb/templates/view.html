@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="main-content">
+        <div class="container">
+            <h1 class="item-title mb-4">{{ item.title }}</h1>
+            
+            <div class="row align-items-start">
+                <div class="col-md-6">
+                    <img src="{{ item.image }}" class="img-fluid rounded shadow-sm w-100" alt="{{ item.title }}">
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-text"><strong>Description:</strong> {{ item.description }}</p>
+                            <p><strong>Price:</strong> {{ item.price }}</p>
+                            <p><strong>Rating:</strong> {{ item.rating }} ⭐</p>
+                            <p><strong>Sizes Available:</strong> {{ ", ".join(item.sizes) }}</p>
+                            <p><strong>Similar Items:</strong> {{ ", ".join(item.similar_items) }}</p>
+                            <div class="mt-auto">
+                                <button class="btn btn-primary like-btn" data-id="{{ item.id }}">
+                                    Like (<span id="likes-{{ item.id }}">{{ item.likes }}</span>)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
