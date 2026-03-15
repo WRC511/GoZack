@@ -59,8 +59,29 @@ The application uses:
 - HTML/CSS for the frontend
 - JavaScript for dynamic functionality
 
+## Publishing on GitHub Pages
+
+GitHub Pages only serves **static files** (HTML, CSS, JS). It does not run Python or Flask, so the live site uses a static version of the app.
+
+**What was added for GitHub Pages:**
+
+- **`index.html`** – Homepage (required by GitHub for the root URL)
+- **`search.html`**, **`view.html`**, **`likes.html`** – Static versions of search, product detail, and likes
+- **`static/products.json`** – Product data for the static site
+- **`static/script-pages.js`** – Logic for the static site (loads JSON, uses `localStorage` for likes)
+
+**How to publish:**
+
+1. Push your repo to GitHub (including the new files above).
+2. In the repo: **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Choose branch **main** (or your default branch) and folder **/ (root)**.
+5. Save. After a minute or two, the site will be at `https://<username>.github.io/<repo-name>/`.
+
+**Note:** On GitHub Pages, “My Likes” is stored in your browser only (`localStorage`), not on a server. The Flask app (run locally with `python3 server.py`) still uses server-side sessions for likes.
+
 ## Notes
 
 - This is a development server and should not be used in production
-- The application uses session-based authentication for managing likes
-- Product data is currently stored in-memory in the server.py file 
+- The application uses session-based authentication for managing likes (Flask); the GitHub Pages version uses `localStorage`
+- Product data is stored in-memory in `server.py` and in `static/products.json` for the static site
